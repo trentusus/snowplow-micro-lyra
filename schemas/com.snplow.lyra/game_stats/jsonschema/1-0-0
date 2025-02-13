@@ -1,0 +1,75 @@
+{
+  "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "type": "object",
+  "self": {
+    "vendor": "com.snplow.lyra",
+    "name": "game_stats",
+    "format": "jsonschema",
+    "version": "1-0-0"
+  },
+  "description": "Tracks player statistics and current game state.",
+  "properties": {
+    "kills": {
+      "description": "The running total of kills by the player.",
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 9999999
+    },
+    "deaths": {
+      "description": "The running total of deaths of the player.",
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 9999999
+    },
+    "damage_taken": {
+      "description": "The amount of damage taken at a specific point in time.",
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 9999999
+    },
+    "damage_given": {
+      "description": "The amount of damage given at a specific point in time.",
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 9999999
+    },
+    "current_weapon": {
+      "description": "The weapon the player is currently using.",
+      "type": [
+        "string",
+        "null"
+      ],
+      "maxLength": 256
+    },
+    "total_damage_taken": {
+      "description": "The running total of damage taken by the player.",
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 9999999
+    },
+    "total_damage_given": {
+      "description": "The running total of damage given by the player.",
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 9999999
+    },
+    "game_map": {
+      "description": "The current map the player is on.",
+      "type": [
+        "string",
+        "null"
+      ],
+      "maxLength": 256
+    }
+  },
+  "required": [
+    "kills",
+    "deaths",
+    "damage_taken",
+    "damage_given",
+    "total_damage_taken",
+    "total_damage_given",
+    "game_map"
+  ],
+  "additionalProperties": false
+}

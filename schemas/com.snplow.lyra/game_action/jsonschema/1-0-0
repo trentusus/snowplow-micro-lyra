@@ -1,0 +1,35 @@
+{
+  "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "type": "object",
+  "self": {
+    "vendor": "com.snplow.lyra",
+    "name": "game_action",
+    "format": "jsonschema",
+    "version": "1-0-0"
+  },
+  "description": "Tracks various in-game actions performed by the player.",
+  "properties": {
+    "action": {
+      "type": "string",
+      "enum": [
+        "shoot",
+        "reload",
+        "damage_received",
+        "damage_given",
+        "weapon_change",
+        "kill",
+        "killed",
+        "app_opened",
+        "app_closed",
+        "gameplay_start",
+        "gameplay_end"
+      ],
+      "description": "The specific action taken by the player in the game.",
+      "maxLength": 256
+    }
+  },
+  "required": [
+    "action"
+  ],
+  "additionalProperties": false
+}
